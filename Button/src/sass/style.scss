@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 60px;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #27282c;
+    
+
+    a {
+        position: relative;
+        background-color: #444;
+        color: #fff;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 15px;
+        letter-spacing: 3px;
+        padding: 10px 30px;
+        transition: 0.2s;
+
+        &:hover {
+            letter-spacing: 4px;
+            background: #1e9bff;
+            color: #1e9bff;
+            box-shadow: 0 0 35px #1e9bff;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            inset: 2px;
+            background-color: #27282c;
+        }
+
+        span {
+            position: relative;
+            z-index: 1;
+        }
+
+        i {
+            position: absolute;
+            inset: 0;
+            display: block;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: -3.5px;
+                left: 80%;
+                width: 10px;
+                height: 5px;
+                border: 2px solid #1e9bff;
+                background: #27282c;
+                transform: translateX(-50%);
+                transition: 0.5s;
+               
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -3.5px;
+                left: 20%;
+                width: 10px;
+                height: 5px;
+                border: 2px solid #1e9bff;
+                background: #27282c;
+                transition: 0.5s;
+                transform: translateX(-50%);
+               
+            }
+        }
+    }
+}
+
+a:hover i::before{
+    width: 20px;
+    left: 20%;
+}
+
+a:hover i::after{
+    width: 20px;
+    left: 80%;
+}
