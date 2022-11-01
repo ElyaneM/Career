@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;0,900;1,300;1,400;1,600;1,700;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Source Sans Pro', sans-serif;
+}
+section{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+}
+section div{
+    position: relative;
+    width: 50%;
+    background: #20506b;
+    overflow: hidden;
+}
+section div:nth-child(1){
+    position: relative;
+    width: 50%;
+    background: url(https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    background-size: cover;
+    overflow: hidden;
+}
+section div:nth-child(1) h2{
+    -webkit-text-stroke: 2px;
+    -webkit-text-stroke-color: #fff;
+    -webkit-text-fill-color: transparent;
+    left: 100%;
+}
+section div h2{
+    position: absolute;
+    white-space: nowrap;
+    font-size: 120px;
+    line-height: 100vh;
+    color: #fff;
+    animation: animate 10s linear infinite;
+}
+@keyframes animate {
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}
