@@ -1,0 +1,495 @@
+@import "_reset.scss";
+
+:root {
+    --bg-color: rgb(41, 45, 51);
+    --word-color: #fff;
+    --btn-color: rgb(238, 138, 2);
+    --right-color: black;
+}
+
+body {
+    background: var(--bg-color);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    .container {
+        max-width: 114rem;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        margin: 0 auto;
+
+        .left {
+            width: 40%;
+            padding: 5rem 2.5rem;
+
+            .title {
+                color: var(--word-color);
+                text-align: center;
+
+                h1 {
+                    font-size: 3rem;
+                    font-weight: normal;
+                    margin-bottom: 1.6rem;
+                }
+
+                p {
+                    font-size: 1.8rem;
+                    line-height: 1.8;
+                    margin-bottom: 1.6rem;
+                }
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+
+                label {
+                    color: var(--word-color);
+                    font-size: 1.8rem;
+                    margin-bottom: 2.5rem;
+
+                    input {
+                        color: var(--word-color);
+                        margin-top: 1rem;
+                        width: 100%;
+                        height: 4rem;
+                        padding: 1rem;
+                        font-size: 1.6rem;
+                        border-bottom: .2rem solid var(--word-color);
+
+                        &::placeholder {
+                            font-weight: 600;
+                            letter-spacing: .1rem;
+                        }
+                    }
+
+                    textarea {
+                        width: 100%;
+                        height: 12rem;
+                        color: var(--word-color);
+                        padding: 1rem;
+                        font-size: 1.6rem;
+                        border-bottom: .2rem solid var(--word-color);
+                        resize: none;
+
+                    }
+                }
+
+                button {
+                    width: 100%;
+                    height: 5rem;
+                    font-size: 1.5rem;
+                    background: var(--btn-color);
+                    color: var(--word-color);
+                    border-radius: 1rem;
+                    letter-spacing: .2rem;
+                    margin-bottom: 4rem;
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    transition: all .2s;
+
+                    &:hover {
+                        background: var(--word-color);
+                        color: var(--btn-color);
+                    }
+                }
+            }
+
+            form+p {
+                text-align: center;
+                color: var(--word-color);
+                font-size: 1.4rem;
+                font-style: italic;
+
+                a {
+                    position: relative;
+
+                    &::after {
+                        position: absolute;
+                        content: "";
+                        width: 100%;
+                        height: .1rem;
+                        background: var(--word-color);
+                        bottom: -.5rem;
+                        left: 0;
+                    }
+
+                    &:hover {
+                        color: rgba(255, 255, 255, 0.7);
+
+                    }
+
+                    &:hover::after {
+                        background: var(--btn-color);
+                    }
+                }
+            }
+        }
+
+        .right {
+            width: 60%;
+            min-height: 100vh;
+            background-color: var(--word-color);
+            padding: 5rem 3rem;
+
+            .title {
+                color: var(--right-color);
+                text-align: center;
+
+                h1 {
+                    font-size: 3rem;
+                    font-weight: bold;
+                    margin-bottom: 1.6rem;
+                }
+
+                p {
+                    font-size: 1.8rem;
+                    line-height: 1.8;
+                    margin-bottom: 1.6rem;
+                }
+            }
+
+            .img {
+                img {
+                    width: 100%;
+                    height: 40rem;
+                }
+            }
+
+            .card-container {
+                width: 100%;
+                display: flex;
+                padding: 1.5rem;
+
+                .card {
+                    h3 {
+                        font-size: 1.6rem;
+                        margin-bottom: 1rem;
+                    }
+
+                    p {
+                        font-size: 1.4rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1040px) {
+    body {
+        .container {
+            max-width: 104rem;
+            min-height: 100vh;
+
+            .left {
+                width: 40%;
+                padding: 5rem 5rem;
+
+                .title {
+
+                    h1 {
+                        font-size: 2.8rem;
+                        margin-bottom: 1.4rem;
+                    }
+
+                    p {
+                        font-size: 1.6rem;
+                        margin-bottom: 1.4rem;
+                    }
+                }
+
+                form {
+
+                    label {
+                        font-size: 1.6rem;
+                        margin-bottom: 2.5rem;
+
+                        input {
+                            margin-top: 1rem;
+                            font-size: 1.6rem;
+
+                            &::placeholder {
+                                font-weight: 500;
+                                letter-spacing: .1rem;
+                            }
+                        }
+
+                        textarea {
+                            width: 100%;
+                            height: 11rem;
+                            padding: 1rem;
+                            font-size: 1.6rem;
+                        }
+                    }
+
+                    button {
+                        width: 100%;
+                        height: 4.5rem;
+                        font-size: 1.3rem;
+                        margin-bottom: 3.5rem;
+                    }
+                }
+
+                form+p {
+                    font-size: 1.3rem;
+
+                }
+            }
+
+            .right {
+                width: 60%;
+                min-height: 100vh;
+                padding: 5rem 3rem;
+
+                .title {
+                    text-align: center;
+
+                    h1 {
+                        font-size: 3rem;
+                        font-weight: bold;
+                        margin-bottom: 1.6rem;
+                    }
+
+                    p {
+                        font-size: 1.8rem;
+                        margin-bottom: 1.6rem;
+                    }
+                }
+
+                .card-container {
+                    padding: 1.5rem;
+
+                    .card {
+                        h3 {
+                            font-size: 1.5rem;
+                            margin-bottom: 1rem;
+                        }
+
+                        p {
+                            font-size: 1.5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 820px) {
+    body {
+
+        .container {
+            max-width: 114rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            .left {
+                width: 100%;
+                padding: 5rem 8rem;
+
+                .title {
+                    h1 {
+                        font-size: 3.5rem;
+                        margin-bottom: 1.8rem;
+                    }
+
+                    p {
+                        font-size: 1.8rem;
+                        margin-bottom: 1.8rem;
+                    }
+                }
+
+                form {
+                    label {
+                        font-size: 1.6rem;
+                        margin-bottom: 2.8rem;
+
+                        input {
+                            margin-top: 1rem;
+                            height: 4rem;
+                            padding: 1rem;
+                            font-size: 1.6rem;
+                        }
+
+                    }
+
+                    button {
+                        height: 5rem;
+                        font-size: 1.5rem;
+                    }
+                }
+
+                form+p {
+                    font-size: 1.4rem;
+
+                    a {
+                        position: relative;
+
+                        &::after {
+                            position: absolute;
+                            content: "";
+                            width: 100%;
+                            height: .1rem;
+                            background: var(--word-color);
+                            bottom: -.5rem;
+                            left: 0;
+                        }
+
+                        &:hover {
+                            color: rgba(255, 255, 255, 0.7);
+
+                        }
+
+                        &:hover::after {
+                            background: var(--btn-color);
+                        }
+                    }
+                }
+            }
+
+            .right {
+                width: 85%;
+                padding: 5rem 3rem;
+
+                .title {
+                    h1 {
+                        font-size: 4rem;
+                        margin-bottom: 1.6rem;
+                    }
+
+                    p {
+                        font-size: 2rem;
+                        margin-bottom: 1.6rem;
+                    }
+                }
+
+                .img {
+                    img {
+                        width: 100%;
+                        height: 40rem;
+                    }
+                }
+
+                .card-container {
+                    width: 100%;
+                    display: flex;
+                    flex-wrap: wrap;
+                    padding: 1.5rem;
+    
+                    .card {
+                        width: 50%;
+                        padding: 1rem;
+                        h3 {
+                            font-size: 1.8rem;
+                            margin-bottom: 1rem;
+                        }
+    
+                        p {
+                            font-size: 1.5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 640px) {
+    body {
+
+        .container {
+            .right {
+
+                .title {
+                    h1 {
+                        font-size: 4.5rem;
+                        margin-bottom: 1rem;
+                    }
+
+                    p {
+                        font-size: 2.5rem;
+                        margin-bottom: .1rem;
+                    }
+                }
+
+                .img {
+                    img {
+                        width: 100%;
+                        height: 25rem;
+                        object-fit: contain;
+                    }
+                }
+
+                .card-container {
+                    padding: 1rem;
+    
+                    .card {
+                        padding: 1rem;
+                        h3 {
+                            font-size: 1.8rem;
+                            margin-bottom: .5rem;
+                        }
+    
+                        p {
+                            font-size: 1.5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 440px) {
+    body {
+
+        .container {
+
+            .right {
+                width: 85%;
+                padding: 3rem 3rem;
+
+                .title {
+                    h1 {
+                        font-size: 4rem;
+                        margin-bottom: 1.6rem;
+                    }
+
+                    p {
+                        font-size: 2rem;
+                        margin-bottom: 1.6rem;
+                    }
+                }
+
+                .img {
+                    img {
+                        width: 100%;
+                        height: 25rem;
+                    }
+                }
+
+                .card-container {
+                    width: 100%;
+                    display: flex;
+                    flex-wrap: wrap;
+                    padding: 1.5rem;
+    
+                    .card {
+                        width: 100%;
+                        padding: .5rem;
+                        h3 {
+                            font-size: 2rem;
+                            margin-bottom: 1.2rem;
+                        }
+    
+                        p {
+                            font-size: 1.5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
