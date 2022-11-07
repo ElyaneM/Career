@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+html{
+    font-size: 10px;
+    scroll-behavior: smooth;
+}
+
+body{
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+input,button,select,textarea{
+    border: none;
+    background-color: none;
+    outline: none;
+}
+ul,ol{
+    list-style: none;
+}
+
+::-webkit-scrollbar{
+    width: 8px;
+    background-color: #000;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: royalblue;
+}
