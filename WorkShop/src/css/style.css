@@ -1,0 +1,673 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@200;300;400;500;600;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, input, textarea, select {
+  outline: none;
+  border: none;
+  background: transparent;
+}
+
+:root {
+  --light: #fff;
+  --orange: rgb(254, 143, 29);
+  --honey: rgb(255, 198, 88);
+  --black: #000;
+  --btn: rgb(130, 120, 110);
+  --grey: rgb(153, 153, 153);
+  --icon-hvr: rgb(116, 209, 206);
+  --span-clr: rgb(10, 113, 254);
+  --input: rgb(248, 248, 248);
+  --bckgrnd: rgba(0, 0, 0, 0.04);
+  --play: rgba(128, 128, 128, 0.5);
+  --play-clr: rgb(219, 201, 193);
+}
+
+body header {
+  width: 100%;
+  height: 12rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0rem 6rem;
+  position: fixed;
+  background: var(--light);
+  z-index: 10000;
+}
+body header .left i {
+  font-size: 4rem;
+  color: var(--orange);
+}
+body header .left a {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-left: 1rem;
+}
+body header .right {
+  display: flex;
+  font-size: 2rem;
+  font-weight: 700;
+}
+body header .right ul {
+  display: flex;
+  align-items: center;
+}
+body header .right ul li {
+  margin: 0 3rem;
+  list-style: none;
+  position: relative;
+}
+body header .right ul li::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0;
+  bottom: 0;
+  background-color: var(--honey);
+  left: 50%;
+  top: 50%;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+  transition: all 0.2s;
+}
+body header .right ul li:hover::after {
+  height: 100%;
+}
+body header .right ul li:hover {
+  cursor: pointer;
+}
+body header .right p {
+  margin-left: 1rem;
+  padding: 2rem 3rem;
+  background-color: var(--honey);
+  transition: all 0.2s;
+}
+body header .right p:hover {
+  cursor: pointer;
+  background-color: rgba(255, 199, 88, 0.861);
+}
+body main {
+  width: 100%;
+  min-height: 100vh;
+  padding: 20rem 0rem 10rem 0rem;
+}
+body main .online-container {
+  display: flex;
+  padding: 1rem 20rem 10rem 20rem;
+}
+body main .online-container .left {
+  width: 50%;
+}
+body main .online-container .left .img_1 img {
+  width: 50rem;
+  height: 50rem;
+  position: relative;
+}
+body main .online-container .left .img_2 img {
+  position: absolute;
+  width: 25rem;
+  height: 15rem;
+  bottom: -2rem;
+  left: 15rem;
+}
+body main .online-container .right {
+  width: 50%;
+  text-align: center;
+  padding: 4rem 0rem;
+}
+body main .online-container .right h1 {
+  font-size: 5rem;
+}
+body main .online-container .right h1 span {
+  position: relative;
+}
+body main .online-container .right h1 span::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  bottom: 0;
+  background-color: var(--honey);
+  left: 50%;
+  z-index: -1;
+  transform: translateX(-50%);
+  transition: all 0.2s;
+}
+body main .online-container .right h1 span:hover::after {
+  height: 100%;
+}
+body main .online-container .right h1 span:hover {
+  cursor: pointer;
+}
+body main .online-container .right p {
+  font-size: 2.5rem;
+  margin-top: 3rem;
+  line-height: 2;
+}
+body main .online-container .right button {
+  padding: 3rem 4rem;
+  margin-top: 4rem;
+  color: var(--light);
+  font-size: 2rem;
+  font-weight: 600;
+  background: var(--btn);
+  transition: all 0.2s;
+}
+body main .online-container .right button:hover {
+  cursor: pointer;
+  background: rgba(130, 120, 110, 0.852);
+}
+body main .over-container {
+  width: 100%;
+  min-height: 100vh;
+  background: var(--bckgrnd);
+}
+body main .over-container .container {
+  width: 100rem;
+  margin: 0 auto;
+  padding: 10rem 0rem;
+  display: flex;
+}
+body main .over-container .container .left {
+  width: 50%;
+}
+body main .over-container .container .left h2 {
+  font-size: 3rem;
+}
+body main .over-container .container .left h1 {
+  margin-top: 2rem;
+  width: 70%;
+  font-size: 5rem;
+}
+body main .over-container .container .left p {
+  width: 80%;
+  margin-top: 2rem;
+  font-size: 2rem;
+  font-weight: 300;
+}
+body main .over-container .container .left ul {
+  padding: 3rem 2rem;
+}
+body main .over-container .container .left ul li {
+  font-size: 2rem;
+  font-weight: 300;
+  padding: 0.5rem 2rem;
+}
+body main .over-container .container .right {
+  width: 50%;
+}
+body main .over-container .container .right img {
+  width: 100%;
+}
+body main .over-container .container b {
+  font-size: 2rem;
+}
+body main .over-container .container b span {
+  position: relative;
+}
+body main .over-container .container b span::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  bottom: 0;
+  background-color: var(--honey);
+  left: 50%;
+  z-index: -1;
+  transform: translateX(-50%);
+  transition: all 0.2s;
+}
+body main .over-container .container b span:hover::after {
+  height: 100%;
+}
+body main .over-container .container b span:hover {
+  cursor: pointer;
+}
+body main .what-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 10rem 20rem;
+}
+body main .what-container .what h1 {
+  font-size: 4.5rem;
+  margin-bottom: 2rem;
+}
+body main .what-container .container {
+  max-width: 114rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+body main .what-container .container .card-container {
+  width: 50%;
+  position: relative;
+  margin-bottom: 20rem;
+}
+body main .what-container .container .card-container .img-container {
+  margin-bottom: 2rem;
+}
+body main .what-container .container .card-container .img-container img {
+  width: 95%;
+}
+body main .what-container .container .card-container .img-container .text {
+  position: absolute;
+  width: 40rem;
+  height: 25rem;
+  background: var(--light);
+  padding: 3rem;
+  bottom: -10rem;
+  right: 4rem;
+}
+body main .what-container .container .card-container .img-container .text h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+}
+body main .what-container .container .card-container .img-container .text h1::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  bottom: 0;
+  background-color: var(--honey);
+  left: 50%;
+  z-index: -1;
+  transform: translateX(-50%);
+  transition: all 0.2s;
+}
+body main .what-container .container .card-container .img-container .text h1:hover {
+  cursor: pointer;
+}
+body main .what-container .container .card-container .img-container .text h1:hover::after {
+  height: 100%;
+}
+body main .what-container .container .card-container .img-container .text p {
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 1.5;
+}
+body main .lorem-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+body main .lorem-container .container {
+  width: 110rem;
+  height: 50rem;
+  background: var(--honey);
+  padding: 8rem;
+}
+body main .lorem-container .container p {
+  margin-bottom: 3rem;
+  font-size: 2.7rem;
+}
+body main .lorem-container .container h2 {
+  margin-bottom: 3rem;
+  font-size: 2.4rem;
+}
+body main .lorem-container .container ul li {
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+}
+body main .online-container .online h1 {
+  font-size: 4.5rem;
+  margin-bottom: 2rem;
+}
+body main .online-container .online .img-container {
+  position: relative;
+}
+body main .online-container .online .img-container:hover img {
+  transform: scale(1.05);
+}
+body main .online-container .online .img-container img {
+  width: 100%;
+  transition: all 1s;
+}
+body main .online-container .online .img-container span {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  text-align: center;
+  background-color: var(--play);
+  line-height: 8rem;
+  position: absolute;
+  font-size: 5rem;
+  top: 50%;
+  right: 50%;
+  left: 50%;
+  color: var(--play-clr);
+  transform: translate(-50%, -50%);
+  transition: all 0.2s;
+}
+body main .online-container .online .img-container span:hover {
+  cursor: pointer;
+  color: rgb(235, 205, 192);
+  background: rgba(128, 128, 128, 0.75);
+}
+body main .korben-container {
+  width: 100%;
+  min-height: 100vh;
+}
+body main .korben-container .container {
+  max-width: 114rem;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+body main .korben-container .container .left {
+  width: 50%;
+  position: relative;
+}
+body main .korben-container .container .left img {
+  width: 100%;
+}
+body main .korben-container .container .left .testimonials {
+  width: 60%;
+  padding: 2.5rem 4rem;
+  background-color: var(--light);
+  position: absolute;
+  bottom: -2rem;
+  right: 2rem;
+}
+body main .korben-container .container .left .testimonials p {
+  display: inline-block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  position: relative;
+  z-index: 2;
+}
+body main .korben-container .container .left .testimonials p::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  bottom: 0;
+  background-color: var(--honey);
+  left: 50%;
+  z-index: -1;
+  transform: translateX(-50%);
+  transition: all 0.2s;
+}
+body main .korben-container .container .left .testimonials p:hover {
+  cursor: pointer;
+}
+body main .korben-container .container .left .testimonials p:hover::after {
+  height: 100%;
+}
+body main .korben-container .container .right {
+  width: 50%;
+  padding: 0rem 5rem;
+}
+body main .korben-container .container .right .text-container {
+  margin: 0 auto;
+  text-align: center;
+  text-align: center;
+}
+body main .korben-container .container .right .text-container p {
+  font-size: 1.9rem;
+  line-height: 2;
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+body main .korben-container .container .right .text-container h1 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+body main .korben-container .container .right .text-container h2 {
+  font-size: 1.7rem;
+  color: rgb(169, 177, 199);
+}
+body main .connect-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+}
+body main .connect-container .container {
+  display: flex;
+  flex-direction: column;
+  padding: 0rem 25rem;
+}
+body main .connect-container .container .connect h1 {
+  font-size: 5rem;
+  margin-bottom: 2rem;
+}
+body main .connect-container .container .connect p {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+body main .connect-container .container form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+body main .connect-container .container form .input-container {
+  width: 100%;
+  display: block;
+  position: relative;
+  margin-bottom: 2rem;
+}
+body main .connect-container .container form .input-container input {
+  width: 100%;
+  height: 8rem;
+  background: var(--input);
+  padding: 3rem;
+  font-size: 2.4rem;
+  font-weight: 600;
+  display: block;
+  z-index: 1;
+}
+body main .connect-container .container form .input-container input::-moz-placeholder {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--grey);
+}
+body main .connect-container .container form .input-container input:-ms-input-placeholder {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--grey);
+}
+body main .connect-container .container form .input-container input::placeholder {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--grey);
+}
+body main .connect-container .container form .input-container input:focus + span {
+  width: 100%;
+}
+body main .connect-container .container form .input-container span {
+  display: block;
+  position: absolute;
+  content: "";
+  width: 0%;
+  height: 0.4rem;
+  background-color: var(--span-clr);
+  bottom: 0.2rem;
+  transition: all 1s;
+  left: 0;
+}
+body main .connect-container .container form textarea {
+  width: 100%;
+  height: 15rem;
+  resize: none;
+  font-size: 2.4rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  background: var(--input);
+  padding: 2rem 3rem;
+}
+body main .connect-container .container form textarea::-moz-placeholder {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--grey);
+}
+body main .connect-container .container form textarea:-ms-input-placeholder {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--grey);
+}
+body main .connect-container .container form textarea::placeholder {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--grey);
+}
+body main .connect-container .container form textarea:focus + span {
+  width: 100%;
+}
+body main .connect-container .container form textarea span {
+  display: block;
+  position: absolute;
+  content: "";
+  width: 0%;
+  height: 0.4rem;
+  background-color: var(--span-clr);
+  bottom: 0.2rem;
+  transition: all 1s;
+  left: 0;
+}
+body main .connect-container .container form div button {
+  padding: 2rem 4rem;
+  font-size: 2rem;
+  font-weight: 600;
+  background-color: var(--btn);
+  color: var(--light);
+  transition: all 0.2s;
+}
+body main .connect-container .container form div button:hover {
+  cursor: pointer;
+  background: rgb(155, 146, 136);
+}
+body footer {
+  width: 100%;
+  min-height: 50rem;
+  color: var(--light);
+  background-color: var(--black);
+}
+body footer .container {
+  padding: 10rem 20rem;
+}
+body footer .container .up {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15rem;
+}
+body footer .container .up .left {
+  width: 50%;
+}
+body footer .container .up .left .tag {
+  margin-bottom: 4.5rem;
+}
+body footer .container .up .left .tag i {
+  font-size: 3rem;
+  color: var(--orange);
+}
+body footer .container .up .left .tag a {
+  font-size: 2.6rem;
+  font-weight: 600;
+  margin-left: 1rem;
+}
+body footer .container .up .left .adress p {
+  font-size: 1.8rem;
+  line-height: 1.5;
+}
+body footer .container .up .right {
+  width: 50%;
+}
+body footer .container .up .right .help {
+  display: flex;
+}
+body footer .container .up .right .help ul {
+  padding-left: 12rem;
+}
+body footer .container .up .right .help ul li {
+  list-style: none;
+  font-size: 2.6rem;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
+}
+body footer .container .up .right .help ul li::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0;
+  bottom: 0;
+  background-color: var(--honey);
+  left: 50%;
+  z-index: -1;
+  transform: translateX(-50%);
+  transition: all 0.2s;
+}
+body footer .container .up .right .help ul li:hover::after {
+  height: 100%;
+}
+body footer .container .up .right .help ul li:hover {
+  cursor: pointer;
+}
+body footer .container .down {
+  display: flex;
+  justify-content: space-between;
+}
+body footer .container .down .copy p {
+  display: block;
+  font-size: 1.8rem;
+}
+body footer .container .down .copy p span {
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+}
+body footer .container .down .copy p span::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  bottom: 0;
+  background-color: var(--honey);
+  left: 50%;
+  z-index: -1;
+  transform: translateX(-50%);
+  transition: all 0.2s;
+}
+body footer .container .down .copy p span:hover::after {
+  height: 100%;
+}
+body footer .container .down .copy p:hover {
+  cursor: pointer;
+}
+body footer .container .down .icon i {
+  font-size: 2rem;
+  padding-left: 1.5rem;
+  transition: all 0.2s;
+}
+body footer .container .down .icon i:hover {
+  color: var(--icon-hvr);
+  cursor: pointer;
+}/*# sourceMappingURL=style.css.map */
