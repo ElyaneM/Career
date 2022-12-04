@@ -1,0 +1,594 @@
+:root {
+  --text-color: #fff;
+  --border-top-color:#0FF7F0;
+  --border-bottom-color:#D686FF;
+  --header-menu-color:rgba(255, 255, 255, 0.16);
+  --main-bg-color:rgb(31, 31, 31);
+  --black-color:#000;
+  --swipper-btn:rgba(0, 0, 0, 0.5);
+  --modal-bg-color:rgba(22, 22, 22, 0.5);
+  --modal-signin-color:rgba(255, 255, 255, 0.4);
+  --modal-signin2-color:rgba(255, 255, 255, 0.02);
+  --modal-signin3-color:rgba(255, 255, 255, 0);
+  --modal-text-color:rgba(255, 255, 255, 0.6);
+  --after-bg-color:#E24D4D;
+  --watchlist-modal-color:#1F1F1F;
+}
+
+@font-face {
+  font-family: gilroy-light-font;
+  src: url(../font/Gilroy-Light.otf);
+}
+@font-face {
+  font-family: gilroy-extra-bold-font;
+  src: url(../font/Gilroy-ExtraBold.otf);
+}
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+table {
+  border-spacing: 0rem;
+}
+
+button {
+  cursor: pointer;
+}
+
+input, select, button, textarea {
+  outline: none;
+  border: none;
+  background: transparent;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+body #side-bar {
+  display: flex;
+  width: 26rem;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: -30rem;
+  bottom: 0;
+  z-index: 9999;
+  background: var(--black-color);
+  transition: all 0.2s;
+  color: var(--text-color);
+  padding: 5rem 4rem;
+  font-family: gilroy-light-font;
+}
+body #side-bar #open-menu {
+  position: absolute;
+  bottom: 2rem;
+  font-size: 1.5rem;
+}
+body #side-bar .side-bar-menu > a {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+body #side-bar .side-bar-menu .menu {
+  margin-top: 5rem;
+  font-size: 1.8rem;
+  line-height: 4rem;
+}
+body #sign-in-modal-container {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--modal-bg-color);
+  color: var(--text-color);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999999;
+}
+body #sign-in-modal-container #sign-in-modal {
+  position: relative;
+  width: 49rem;
+  min-height: 55rem;
+  padding: 5rem 1rem;
+  border-radius: 3rem;
+  background: radial-gradient(100% 100% at 0% 0%, var(--modal-signin-color) 0%, var(--modal-signin3-color) 100%);
+  box-shadow: inset -2.41843px -2.41843px 120.921px var(--modal-signin2-color);
+  -webkit-backdrop-filter: blur(7.5px);
+          backdrop-filter: blur(7.5px);
+}
+body #sign-in-modal-container #sign-in-modal > .cross {
+  position: absolute;
+  cursor: pointer;
+  top: -2rem;
+  right: -2rem;
+  width: 4.5rem;
+  height: 4.5rem;
+  text-align: center;
+  line-height: 4.5rem;
+  font-size: 2rem;
+  border-radius: 50%;
+  background: radial-gradient(100% 100% at 10% 10%, var(--modal-signin-color) 0%, var(--modal-signin3-color) 100%);
+  box-shadow: inset -2.59981px -2.59981px 129.99px var(--modal-signin2-color);
+  -webkit-backdrop-filter: blur(5.375px);
+          backdrop-filter: blur(5.375px);
+}
+body #sign-in-modal-container #sign-in-modal h1 {
+  font-size: 3rem;
+  text-align: center;
+  font-family: gilroy-light-font;
+}
+body #sign-in-modal-container #sign-in-modal > p {
+  font-size: 1.8rem;
+  text-align: center;
+  margin-top: 3rem;
+  font-weight: 600;
+  font-family: gilroy-light-font;
+}
+body #sign-in-modal-container #sign-in-modal form {
+  padding: 4rem 5rem 1rem 5rem;
+}
+body #sign-in-modal-container #sign-in-modal form label p {
+  font-size: 1.4rem;
+  font-family: gilroy-light-font;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+}
+body #sign-in-modal-container #sign-in-modal form label input {
+  width: 37rem;
+  height: 5.2rem;
+  background: var(--black-color);
+  border: 0.1rem solid var(--border-top-color);
+  border-radius: 1rem;
+  margin: 1rem 0rem;
+  padding: 0rem 2rem;
+}
+body #sign-in-modal-container #sign-in-modal .sign {
+  padding: 0rem 5rem 1rem 5rem;
+}
+body #sign-in-modal-container #sign-in-modal .sign > a {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 1.4rem;
+  font-family: gilroy-light-font;
+}
+body #sign-in-modal-container #sign-in-modal .sign div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body #sign-in-modal-container #sign-in-modal .sign div a {
+  font-size: 1.6rem;
+  font-family: gilroy-light-font;
+  margin: 4rem 0rem;
+}
+body #sign-in-modal-container #sign-in-modal .sign div a:nth-child(2) {
+  width: 17rem;
+  height: 5rem;
+  text-align: center;
+  line-height: 5rem;
+  border-radius: 4rem;
+  background: radial-gradient(100% 100% at 0% 0%, var(--modal-signin-color) 0%, var(--modal-signin3-color) 100%);
+  box-shadow: inset -2.41843px -2.41843px 120.921px var(--modal-signin2-color);
+  -webkit-backdrop-filter: blur(7.5px);
+          backdrop-filter: blur(7.5px);
+  border-top: 0.05rem solid var(--border-top-color);
+  border-bottom: 0.05rem solid var(--border-bottom-color);
+}
+body #sign-in-modal-container #sign-in-modal .sign p {
+  font-size: 1.3rem;
+  text-align: center;
+  font-family: gilroy-light-font;
+  letter-spacing: 0.1rem;
+  margin-top: 2rem;
+  color: var(--modal-text-color);
+}
+body header {
+  width: 100%;
+  height: 28rem;
+  background: url(../img/Back-Images.png);
+  background-size: cover;
+  background-position: center;
+  padding: 5rem 12rem;
+  color: var(--text-color);
+  font-family: gilroy-light-font;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+body header nav {
+  width: 100%;
+  height: 4.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body header nav .left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+body header nav .left .logo {
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  line-height: 3rem;
+  height: 3rem;
+  font-family: gilroy-extra-bold-font;
+  letter-spacing: 0.1rem;
+}
+body header nav .left .left-menu {
+  width: 25rem;
+  height: 4.5rem;
+  background: var(--header-menu-color);
+  margin-left: 8rem;
+  border-top: 0.1rem solid var(--border-top-color);
+  border-bottom: 0.1rem solid var(--border-bottom-color);
+  border-radius: 1rem;
+}
+body header nav .left .left-menu ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+body header nav .left .left-menu ul li > a {
+  height: 1.7rem;
+  line-height: 1.7rem;
+  font-size: 1.4rem;
+}
+body header nav .left .left-menu ul li:last-child {
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  position: relative;
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+}
+body header nav .left .left-menu ul li:last-child #open-left-menu-modal .fa-chevron-down {
+  transition: all 0.2s;
+}
+body header nav .left .left-menu ul li:last-child #left-menu-modal {
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 7rem;
+  padding: 1rem 0rem;
+  top: 2rem;
+  left: 1rem;
+  background: var(--header-menu-color);
+  border-top: 0.1rem solid var(--border-top-color);
+  border-bottom: 0.1rem solid var(--border-bottom-color);
+  border-radius: 1rem;
+}
+body header nav .left .left-menu ul li:last-child #left-menu-modal a {
+  text-transform: capitalize;
+}
+body header nav .left .left-menu ul li:last-child #left-menu-modal a:not(:last-child) {
+  margin-bottom: 1rem;
+}
+body header nav .right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body header nav .right #open-sidebar {
+  display: none;
+}
+body header nav .right a:first-child {
+  width: 14rem;
+  height: 4.5rem;
+  background: var(--header-menu-color);
+  line-height: 4.5rem;
+  text-align: center;
+  font-size: 1.4rem;
+  position: relative;
+  margin-right: 2rem;
+  border-top: 0.1rem solid var(--border-top-color);
+  border-bottom: 0.1rem solid var(--border-bottom-color);
+  border-radius: 1rem;
+}
+body header nav .right a:first-child:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 2rem;
+  width: 1rem;
+  transform: translateY(-50%);
+  height: 1rem;
+  background: var(--after-bg-color);
+  border-radius: 50%;
+}
+body header nav .right a:first-child #watchlist-modal {
+  display: none;
+  position: absolute;
+  width: 24rem;
+  height: 22rem;
+  background: var(--header-menu-color);
+  top: 75%;
+  right: 0;
+  border-radius: 0.8rem;
+  padding: 1rem 0.5rem;
+  justify-content: flex-start;
+  align-items: center;
+  border-top: 0.1rem solid var(--border-top-color);
+  border-bottom: 0.1rem solid var(--border-bottom-color);
+  border-radius: 1rem;
+}
+body header nav .right a:first-child #watchlist-modal > .cross {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: radial-gradient(100% 100% at 0% 0%, var(--modal-signin-color) 0%, var(--modal-signin3-color) 100%);
+  position: absolute;
+  top: -1rem;
+  line-height: 2rem;
+  text-align: center;
+  z-index: 10;
+  right: -1rem;
+  box-shadow: inset -1.14875px -1.14875px 57.4376px var(--modal-signin2-color);
+  -webkit-backdrop-filter: blur(2.375px);
+          backdrop-filter: blur(2.375px);
+}
+body header nav .right a:first-child #watchlist-modal .inner-container {
+  width: 22rem;
+  height: 20rem;
+  overflow-y: scroll;
+}
+body header nav .right a:first-child #watchlist-modal .inner-container::-webkit-scrollbar {
+  display: none;
+}
+body header nav .right a:first-child #watchlist-modal .inner-container div {
+  background: var(--watchlist-modal-color);
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  position: relative;
+  border-radius: 0.4rem;
+}
+body header nav .right a:first-child #watchlist-modal .inner-container div:not(:last-child) {
+  margin-bottom: 1rem;
+}
+body header nav .right a:first-child #watchlist-modal .inner-container div img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+body header nav .right a:first-child #watchlist-modal .inner-container div p {
+  font-size: 1.2rem;
+  height: 4rem;
+  overflow: hidden;
+  padding: 0rem 1rem;
+}
+body header nav .right a:first-child #watchlist-modal .inner-container div .cross {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0.75rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  text-align: center;
+}
+body header nav .right a:last-child {
+  width: 10rem;
+  height: 4.5rem;
+  line-height: 4.5rem;
+  background: var(--header-menu-color);
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 1.4rem;
+  border-top: 0.1rem solid var(--border-top-color);
+  border-bottom: 0.1rem solid var(--border-bottom-color);
+  border-radius: 1rem;
+}
+body header .volume-icon {
+  margin-top: 7rem;
+  display: flex;
+  justify-content: flex-end;
+}
+body header .volume-icon i {
+  width: 5rem;
+  height: 5rem;
+  border-top: 0.1rem solid var(--border-top-color);
+  border-bottom: 0.1rem solid var(--border-bottom-color);
+  border-radius: 50%;
+  font-size: 1.4rem;
+  text-align: center;
+  line-height: 5rem;
+  align-items: center;
+  cursor: pointer;
+}
+body main {
+  background-color: var(--main-bg-color);
+  padding-top: 3rem;
+}
+body main .main-container {
+  padding-left: 10rem;
+  width: 100%;
+  min-height: calc(100% - 31rem);
+  font-family: gilroy-light-font;
+}
+body main .main-container .up-slider .swiper {
+  width: 100%;
+  height: 17.5rem;
+  position: relative;
+}
+body main .main-container .up-slider .swiper .swiper-wrapper .swiper-slide {
+  height: 17.5rem;
+}
+body main .main-container .up-slider .swiper .swiper-wrapper .swiper-slide .img-slide {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+body main .main-container .up-slider .swiper .swiper-wrapper .swiper-slide .img-slide img {
+  width: 100%;
+  height: 15rem;
+  border-radius: 1rem;
+}
+body main .main-container .up-slider .swiper .swiper-wrapper .swiper-slide .img-slide p {
+  height: 2.5rem;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  padding: 0.3rem 0.5rem;
+  color: var(--text-color);
+}
+body main .main-container .up-slider .swiper .swiper-button-prev {
+  position: absolute;
+  width: 7rem;
+  height: 7rem;
+  background: var(--swipper-btn);
+  border-radius: 50%;
+  top: 60%;
+  left: 6rem;
+  transform: translate(-50%, -50%);
+}
+body main .main-container .up-slider .swiper .swiper-button-prev::after {
+  position: absolute;
+  font-size: 3rem;
+  color: var(--text-color);
+  top: 50%;
+  left: 46%;
+  transform: translate(-50%, -50%);
+}
+body main .main-container .up-slider .swiper .swiper-button-next {
+  position: absolute;
+  width: 7rem;
+  height: 7rem;
+  background: var(--swipper-btn);
+  border-radius: 50%;
+  top: 60%;
+  right: 10rem;
+  transform: translate(-50%, -50%);
+}
+body main .main-container .up-slider .swiper .swiper-button-next::after {
+  position: absolute;
+  font-size: 3rem;
+  color: var(--text-color);
+  top: 50%;
+  right: 26%;
+  transform: translate(-50%, -50%);
+}
+body main .main-container .down-slider {
+  margin-top: 3rem;
+}
+body main .main-container .down-slider .mySwiper {
+  width: 100%;
+  height: 17.5rem;
+}
+body main .main-container .down-slider .mySwiper .swiper-slide {
+  display: flex;
+  width: 100%;
+  height: 17.5rem;
+}
+body main .main-container .down-slider .mySwiper .swiper-slide .img-slide {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+body main .main-container .down-slider .mySwiper .swiper-slide .img-slide img {
+  width: 100%;
+  height: 15rem;
+  border-radius: 1rem;
+}
+body main .main-container .down-slider .mySwiper .swiper-slide .img-slide p {
+  height: 2.5rem;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  padding: 0.3rem 0.5rem;
+  color: var(--text-color);
+}
+body main .main-container .down-slider .mySwiper .swiper-button-prev {
+  position: absolute;
+  width: 7rem;
+  height: 7rem;
+  background: var(--swipper-btn);
+  border-radius: 50%;
+  top: 60%;
+  left: 6rem;
+  transform: translate(-50%, -50%);
+}
+body main .main-container .down-slider .mySwiper .swiper-button-prev::after {
+  position: absolute;
+  font-size: 3rem;
+  color: var(--text-color);
+  top: 50%;
+  left: 46%;
+  transform: translate(-50%, -50%);
+}
+body main .main-container .down-slider .mySwiper .swiper-button-next {
+  position: absolute;
+  width: 7rem;
+  height: 7rem;
+  background: var(--swipper-btn);
+  border-radius: 50%;
+  top: 60%;
+  right: 10rem;
+  transform: translate(-50%, -50%);
+}
+body main .main-container .down-slider .mySwiper .swiper-button-next::after {
+  position: absolute;
+  font-size: 3rem;
+  color: var(--text-color);
+  top: 50%;
+  right: 26%;
+  transform: translate(-50%, -50%);
+}
+
+@media only screen and (max-width: 60rem) {
+  body header nav .left .left-menu {
+    display: none;
+  }
+  body header nav .right #open-sidebar {
+    display: inline-block;
+    font-size: 3rem;
+    cursor: pointer;
+  }
+  body header nav .right a {
+    display: none;
+  }
+  body main .main-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  body main .main-container .up-slider .mySwiper .swiper-button-next {
+    display: none;
+  }
+  body main .main-container .up-slider .mySwiper .swiper-button-prev {
+    display: none;
+  }
+  body main .main-container .down-slider .mySwiper .swiper-button-next {
+    display: none;
+  }
+  body main .main-container .down-slider .mySwiper .swiper-button-prev {
+    display: none;
+  }
+}/*# sourceMappingURL=style.css.map */

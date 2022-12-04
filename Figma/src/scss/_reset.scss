@@ -1,0 +1,41 @@
+@font-face {
+    font-family: gilroy-light-font;
+    src: url(../font/Gilroy-Light.otf);
+}
+@font-face {
+    font-family: gilroy-extra-bold-font;
+    src: url(../font/Gilroy-ExtraBold.otf);
+}
+html{
+    font-size: 10px;
+    scroll-behavior: smooth;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: inherit;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+ul,ol,li{
+    list-style: none;
+}
+
+table {
+    border-spacing: 0rem;
+}
+button{
+    cursor: pointer;
+}
+
+input,select,button,textarea{
+    outline: none;
+    border: none;
+    background: transparent;
+}
+
